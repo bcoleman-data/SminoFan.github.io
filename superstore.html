@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Superstore Sales Analysis — Databricks</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span>
+					<span class="title">Brandon Coleman Portfolio</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutme.html">About Me</a></li>
+				<li>
+					<span class="opener">Projects</span>
+					<ul>
+						<a href="rainfall.html">Rainfall Prediction</a>
+						<a href="citibike.html">CitiBike Analysis</a>
+						<a href="mars.html">Mission to Mars</a>
+						<a href="superstore.html">Superstore Analysis</a>
+						<a href="leetcode.html">LeetCode Practice</a>
+						<a href="etl.html">ETL Pipeline</a>
+						<a href="employee.html">Employee Database</a>
+						<a href="vacancy.html">Vacancy Collaborative</a>
+
+					</ul>
+				</li>
+				<li><a href="resume.html">Resume</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="content-block">
+
+				<h1>Superstore Sales Analysis — Databricks</h1>
+				<p>
+				<h2>Overview</h2>
+
+				End‑to‑end data pipeline and analytics project built on Databricks using
+				Delta Lake, PySpark, and Unity Catalog.
+				This project demonstrates a full medallion architecture (Bronze → Silver → Gold)
+				and delivers actionable business insights from the Superstore dataset.
+				</p>
+
+				<hr />
+
+				<h2>Architecture</h2>
+				<p>Bronze → Silver → Gold medallion pipeline implemented in Databricks.</p>
+				<span class="image main"><img src="images/medallion.jpg" alt="Medallion Architecture" /></span>
+
+				<h2>Tools & Technologies</h2>
+				<ul>
+					<li>Databricks (Community Edition)</li>
+					<li>Delta Lake</li>
+					<li>PySpark</li>
+					<li>Unity Catalog</li>
+					<li>Databricks SQL</li>
+				</ul>
+
+				<h2>Dataset</h2>
+				<p>
+					<li><a href="https://www.kaggle.com/datasets/vivek468/superstore-dataset-final">Superstore Sales
+							Dataset — Kaggle (~10,000 records)</a></li>
+				</p>
+
+				<hr />
+
+				<h2>Key Findings</h2>
+
+				<h3>High discounts universally result in net profit losses</h3>
+				<span class="image main"><img src="images/discount_distribution.png" alt="Discount Analysis" /></span>
+
+				<h3>West leads all regions in Sales and Profit</h3>
+				<span class="image main"><img src="images/region_sales.png" alt="Regional Performance" /></span>
+
+				<h3>Canon imageCLASS Copier accounts for 50% of top 10 product profit</h3>
+				<span class="image main"><img src="images/product_sales.png" alt="Product Sales" /></span>
+
+				<h3>November discounting is less efficient than December despite higher sales</h3>
+				<span class="image main"><img src="images/monthly_trends.png" alt="Monthly Trends" /></span>
+
+				<hr />
+
+				<!-- WHAT I LEARNED -->
+				<h2>What I Learned</h2>
+				<p>
+					This project strengthened my ability to design and operate a full medallion architecture
+					inside Databricks. I gained hands-on experience building reliable ingestion pipelines,
+					enforcing schema consistency with Delta Lake, and using PySpark to transform large datasets
+					efficiently. I also deepened my understanding of how business metrics emerge from clean,
+					well-modeled data — and how to communicate those insights visually.
+				</p>
+				<ul>
+					<li>Building scalable Bronze → Silver → Gold pipelines using Delta Lake</li>
+					<li>Managing schemas, constraints, and versioning with Delta Lake features</li>
+					<li>Writing optimized PySpark transformations for large datasets</li>
+					<li>Using Unity Catalog for governance and table lineage</li>
+					<li>Designing Databricks SQL queries for business-ready metrics</li>
+					<li>Creating visualizations that tie technical work to business outcomes</li>
+				</ul>
+
+				<hr />
+
+				<!-- KEY SKILLS DEMONSTRATED -->
+				<h2>Key Skills Demonstrated</h2>
+				<ul>
+					<li>Data Engineering: Medallion architecture, ETL orchestration, Delta Lake optimization</li>
+					<li>PySpark: Transformations, aggregations, window functions, performance tuning</li>
+					<li>Data Modeling: Clean dimensional structures for Sales, Profit, and Product metrics</li>
+					<li>SQL Analytics: KPI creation, trend analysis, regional performance comparisons</li>
+					<li>Visualization: Clear, business-focused charts for decision-making</li>
+					<li>Reproducibility: Modular notebooks that run end-to-end</li>
+				</ul>
+
+				<hr />
+
+				<!-- NOTEBOOK SCREENSHOTS -->
+				<h2>Notebook Screenshots</h2>
+				<p>
+					Below are selected screenshots from my Databricks notebooks showing ingestion,
+					transformations, and gold-layer metric creation.
+				</p>
+
+				<h3>Bronze Layer — Ingestion</h3>
+				<span class="image main"><img src="images/bronze.png" alt="Bronze Notebook Screenshot" /></span>
+
+				<h3>Silver Layer — Cleaning & Transformations</h3>
+				<span class="image main"><img src="images/silver.png" alt="Silver Notebook Screenshot" /></span>
+
+				<h3>Gold Layer — Business Metrics</h3>
+				<div class="carousel-container carousel-1">
+					<div class="carousel">
+						<img src="images/gold_1.png" class="active">
+						<img src="images/gold_2.png">
+					</div>
+					<div class="carousel-controls"> <span class="prev">&#10094;</span> <span
+							class="next">&#10095;</span> </div>
+				</div>
+				<hr />
+
+				<h2>Notebook Workflow</h2>
+				<ol>
+					<li><strong>01_bronze</strong> — Data ingestion and raw storage</li>
+					<li><strong>02_silver</strong> — Data cleaning and transformation</li>
+					<li><strong>03_gold</strong> — Business metric aggregations</li>
+					<li><strong>04_insights</strong> — Visualizations and recommendations</li>
+				</ol>
+
+				<p>
+					All notebooks can be run end‑to‑end to reproduce the pipeline and insights. <a href="https://www.kaggle.com/datasets/vivek468/superstore-dataset-final">Dataset available on
+							Kaggle.</a>
+				</p>
+
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Brandon Coleman. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
