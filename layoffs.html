@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Employee Database Project</title>
+    <title>Global Layoffs Analysis</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -62,90 +62,84 @@
             <!-- Main -->
             <div id="main">
                 <div class="content-block">
-                    <h1>Employee Database Project</h1>
+                    <h1>Global Layoffs Analysis</h1>
 
                     <section>
                         <h2>Overview</h2>
                         <p>
-                            This project involved designing a complete relational employee database from six CSV files
-                            containing information on employees, departments, salaries, titles, and organizational
-                            structure. I built the schema in SQL, created an Entity Relationship Diagram (ERD), and
-                            performed analytical queries to uncover insights about hiring trends, departmental
-                            composition,
-                            and salary distributions.
+                            In 2024 I completed an independent end-to-end data cleaning and exploratory analysis project
+                            using MySQL
+                            to investigate global tech layoff trends across companies, industries, and time.
                         </p>
                     </section>
 
                     <section>
                         <h2>Data Sources</h2>
-                        <p>The project was built from six raw CSV files:</p>
-                        <div class="csv-grid">
-                            <ul>
-                                <li>employees.csv</li>
-                                <li>departments.csv</li>
-                                <li>dept_emp.csv</li>
-                                <li>dept_manager.csv</li>
-                                <li>salaries.csv</li>
-                                <li>titles.csv</li>
-                            </ul>
-                        </div>
-
-
+                        <p>The project was built from a raw CSV file containing 2,361 records with fields including
+                            'company', 'country', 'total_laid_off', 'funds_raised_millions', 'stage'.</p>
                         <!-- Placeholder: Screenshot of CSV folder or sample rows -->
                         <span class="inline-visual">
-                            <img src="images/six_csvs_employeeDB.png" alt="Placeholder for data preview" />
+                            <img src="images/layoffs_csv.png" alt="Placeholder for data preview" />
                         </span>
                     </section>
                     <p></p>
                     <section>
-                        <h2>Database Schema</h2>
-                        <p>
-                            I designed a normalized schema that accurately models the relationships between employees,
-                            departments, managers, salaries, and titles. The ERD below illustrates the final structure.
+                        <h2>Data CLeaning</h2>
+                        <p> I removed duplicates and unnecessary columns, standardized the data correcting for
+                            inconsistencies in spelling and data types
+                            resulting in improved data integrity across the dataset. Overall, records were reduced from 2,361 to
+                            1,995 after removing duplicates and null-heavy rows.
                         </p>
 
                         <!-- Placeholder: ERD Diagram -->
                         <span class="inline-visual">
-                            <img src="images/Employees_ERD.png" alt="Placeholder for ERD diagram" />
+                            <img src="images/cleaning_layoffs.png" alt="Placeholder for ERD diagram" />
                         </span>
                     </section>
                     <p></p>
                     <section>
-                        <h2>Key SQL Queries</h2>
+                        <h2>Exploratory Analysis (Key SQL Queries)</h2>
                         <p>
                             To analyze the dataset, I wrote SQL queries that explored:
                         </p>
                         <ul>
-                            <li>Employee salary information joined across multiple tables</li>
-                            <li>Hiring patterns, including employees hired in specific years </li>
-                            <li>Department manager assignments and their employment timelines </li>
-                            <li>How employees are distributed across departments like Sales and Development</li>
-                            <li>Last‑name frequency to identify common patterns in the workforce</li>
+                            <li> Rolling monthly total of layoffs using a CTE + SUM() OVER() window function</li>
+                            <li> Year-over-year company ranking using DENSE_RANK() partitioned by year</li>
+                            <li>Identified companies where percentage_laid_off = 1 (complete shutdowns), ordered by
+                                funds
+                                raised — highlighting well-funded companies that still failed
+                        </ul>
+                        </li>
                         </ul>
 
                         <!-- Placeholder: SQL screenshot -->
                         <span class="inline-visual">
-                            <img src="images/emp_query.png" alt="Placeholder for SQL query screenshot" />
+                            <img src="images/exploring_layoffs.png" alt="Placeholder for SQL query screenshot" />
                         </span>
                     </section>
                     <p></p>
                     <section>
                         <h2>Insights</h2>
                         <p>
-                            Through this analysis, I uncovered patterns in salary progression, departmental growth, and
-                            employee movement across roles. These insights demonstrate how relational databases can
-                            support
-                            HR analytics and organizational decision‑making.
+                            <li>High-profile, well-funded companies were not immune
+                                to complete shutdowns.</li>
+                            <li>Layoff volume varied significantly by funding stage, with later-stage companies
+                                accounting
+                                for a disproportionate share of total layoffs.</li>
+                            <li>Monthly rolling totals revealed clear acceleration periods in layoff activity
+                                across the dataset's timeframe.</li>
                         </p>
                     </section>
 
                     <section>
                         <h2>Technologies Used</h2>
                         <ul>
-                            <li>PostgreSQL</li>
-                            <li>SQL</li>
-                            <li>QuickDBD (for ERD)</li>
-                            <li>Python (optional for data prep)</li>
+                            <li>MySQL — data cleaning, transformation, and exploratory analysis</li>
+                            <li>CTEs — for duplicate detection and multi-step ranking logic</li>
+                            <li>Window Functions — ROW_NUMBER(), DENSE_RANK(), rolling totals</li>
+                            <li>DDL/DML — CREATE, INSERT, UPDATE, DELETE, ALTER</li>
+                            <li>String & Date Functions — TRIM(), STR_TO_DATE(), SUBSTRING(), LIKE</li>
+
                         </ul>
                     </section>
 
@@ -154,8 +148,8 @@
                         <p>
                             View the full project on GitHub:
                             <br />
-                            <a href="https://github.com/bcoleman-data/Employees_DB_HW9/" target="_blank">
-                                Employee Database Repository
+                            <a href="https://github.com/bcoleman-data/global_layoffs" target="_blank">
+                                Global Layoffs Analysis
                             </a>
                         </p>
                     </section>
